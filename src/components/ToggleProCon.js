@@ -1,20 +1,20 @@
 import React from 'react'
 
-const StableFilter = ({isSelected,  handleCheckboxChange}) => {
+const ToggleProCon = ({isSelected,  handleCheckboxChange}) => {
     return (
         <div className="form-check">
         <label>
           <input
             type="checkbox"
-            id='stableOnly'
+            id='showProCon'
             checked={isSelected}
             onChange={handleCheckboxChange}
             className="form-check-input"
           />
-          Stable Only
+          Show Pros & Cons
         </label>
       </div>
     )
 }
 
-export default StableFilter
+export default ToggleProCon

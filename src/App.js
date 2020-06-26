@@ -3,7 +3,7 @@ import Data from './data/data'
 import Sort from './components/Sort'
 import StableFilter from './components/StableFilter'
 import AlgorithmList from './components/AlgorithmList'
-
+import ToggleProCon from './components/ToggleProCon'
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       selectedSort: "default",
       dataList:[],
-      stableOnly:false
+      stableOnly:false,
+      showProCon:true
     };
   }
 
@@ -50,9 +51,10 @@ class App extends Component {
     }
   }
 
-  onCheckboxChange = () => {
-    const selected = !this.state.stableOnly;
-    this.setState({stableOnly:selected});
+  handleCheckboxChange = (e) => {
+    const id = e.target.id
+    const selected = !this.state[id]
+    this.setState({[e.target.id]:selected});
   }
 
   render(){
@@ -69,11 +71,16 @@ class App extends Component {
           handleSortChange={this.handleSortChange} 
         />
         <StableFilter 
-          onCheckboxChange={this.onCheckboxChange} 
+          handleCheckboxChange={this.handleCheckboxChange} 
           isSelected={this.state.stableOnly}
         />
+        <ToggleProCon
+          handleCheckboxChange={this.handleCheckboxChange} 
+          isSelected={this.state.showProCon}
+        /> 
         <AlgorithmList 
           displayData={displayData}
+          showProCon={this.state.showProCon}
         />
       </div>
     );
