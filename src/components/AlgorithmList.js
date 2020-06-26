@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Data from '../data/data'
 import AlgorithmItem from './AlgorithmItem'
 import Sort from './Sort'
+import StableFilter from './StableFilter';
 
 class AlgorithmList extends Component{
 
@@ -9,7 +10,8 @@ class AlgorithmList extends Component{
         super(props);
         this.state = {
           selectedSort: "default",
-          displayData:[]
+          dataList:[],
+          stableOnly:false
         };
       }
     
@@ -27,33 +29,44 @@ class AlgorithmList extends Component{
         if(sort === 'default'){
             let display = []
             Data.forEach((el)=> display.push(el))
-            this.setState({displayData:display})
+            this.setState({dataList:display})
         }
         if(sort === 'az'){
             let sortedData = 
-            this.state.displayData.sort(
+            this.state.dataList.sort(
                 (a, b) => a.name.localeCompare(b.name)
             )
-            this.setState({displayData:sortedData})
+            this.setState({dataList:sortedData})
         }
         if(sort === 'created'){
             console.log('created!')
             let sortedData = 
-            this.state.displayData.sort(
+            this.state.dataList.sort(
                 (a, b) => {
                     return new Date(b.addedOn) - new Date(a.addedOn);
                 }
             )
-            this.setState({displayData:sortedData})
+            this.setState({dataList:sortedData})
         }
     }
     
+    onCheckboxChange = () => {
+        const selected = !this.state.stableOnly;
+        this.setState({stableOnly:selected});
+    }
+
     render(){
-        const {displayData} = this.state
+
+        const stableList = this.state.dataList.filter((el) => {
+            return el.stable
+        } )
+        
+        const displayData = this.state.stableOnly ? stableList : this.state.dataList
 
         return (
             <div>
                 <Sort selectedSort={this.state.selectedSort} handleSortChange={this.handleSortChange} />
+                <StableFilter onCheckboxChange={this.onCheckboxChange} isSelected={this.state.stableOnly}/>
                 <h1>Algorithm List</h1>
                 {displayData && displayData.length>0 && (
                     displayData.map((algorithm, idx) => (
