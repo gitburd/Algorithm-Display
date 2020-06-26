@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StableFilter = ({isSelected, onCheckboxChange}) => {
+const StableFilter = ({isSelected,  handleCheckboxChange}) => {
     return (
         <div className="form-check">
         <label>
@@ -8,7 +8,7 @@ const StableFilter = ({isSelected, onCheckboxChange}) => {
             type="checkbox"
             // name='Stable Only'
             checked={isSelected}
-            onChange={onCheckboxChange}
+            onChange={handleCheckboxChange}
             className="form-check-input"
           />
           Stable Only
