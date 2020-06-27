@@ -1,3 +1,24 @@
+# Algorithm Display
+
+This project was created as a coding challenge for Major League Hacking.
+Data about algorithms stored in the Data.js file can be displayed, sorted and filtered.
+
+Clone or download to run locally. 
+
+In the project directory, you can run:
+
+*** 
+
+`npm i --save`
+
+`npm run start`
+
+*** 
+
+To download the dependencies and start a server on port 3000 by default. 
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -5,6 +5,11 @@ body{
 }
 
 h1{
+  color: #fff;
+  text-decoration: underline;
+}
+
+h2{
   color: #393f4d;
 }
 
@@ -14,8 +19,8 @@ h1{
 
 .algorithmItem{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-  padding: 15px 40px 30px 40px;
-  width:75%;
+  padding: 15px 30px 30px 30px;
+  width:90%;
   margin: 25px auto;
 }
 
@@ -26,24 +31,36 @@ h1{
   right: 0;
   background-color: #393f4d;
   color:white;
-  padding-bottom: 10px;
+  padding:5px 0 20px 20px;
 }
 
 .sort {
-  padding: 10px 0 10px 20px;
+  padding: 5px 0 5px 20px;
   float:left;
 }
 
 .filter{
-  padding: 10px 0 10px 20px;
+  padding: 5px 20px;
   clear:both;
 }
 
 .img{
-  max-width:30%;  
-  height:200px;
+  max-width:36%;  
+  height:350px;
   object-fit: cover;
   padding-bottom:20px;
-  padding-right: 30px;
+  padding-right: 20px;
   float: left;
+}
+
+.dark-btn{
+  background-color: #393f4d;
+  color:white;
+  padding:7px;
+  /* clear: both; */
+}
+
+.dark-btn:hover{
+  cursor: pointer;
+  opacity: 70%;
 }

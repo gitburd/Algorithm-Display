@@ -40,12 +40,12 @@ const Sort = ({handleSortChange, selectedSort}) => {
                 <label>
                     <input
                     type="radio"
-                    value="created"
-                    checked={selectedSort === "created"}
+                    value="dateAdded"
+                    checked={selectedSort === "dateAdded"}
                     onChange={handleChange}
                     className="form-check-input"
                     />
-                    Created date
+                    Date added
                 </label>
                 </div>
             </form>

@@ -39,8 +39,7 @@ class App extends Component {
         )
         this.setState({dataList:sortedData})
     }
-    if(sort === 'created'){
-        console.log('created!')
+    if(sort === 'dateAdded'){
         let sortedData = 
         this.state.dataList.sort(
             (a, b) => {
@@ -66,12 +65,12 @@ class App extends Component {
 
     return (
       <div>
-        <div className="header">
+        <header className="header">
+          <h1> Algorithm Display</h1>
           <Sort 
             selectedSort={this.state.selectedSort} 
             handleSortChange={this.handleSortChange} 
           />
-          
           <StableFilter 
             handleCheckboxChange={this.handleCheckboxChange} 
             isSelected={this.state.stableOnly}
@@ -80,7 +79,7 @@ class App extends Component {
             handleCheckboxChange={this.handleCheckboxChange} 
             isSelected={this.state.showProCon}
           /> 
-        </div>
+        </header>
         <AlgorithmList 
           displayData={displayData}
           showProCon={this.state.showProCon}
