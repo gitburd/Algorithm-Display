@@ -1,3 +1,8 @@
+# Algorithm Display
+
+This project was created as a coding challenge for Major League Hacking.
+Data about algorithms stored in the Data.js file can be displayed, sorted and filtered.   
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

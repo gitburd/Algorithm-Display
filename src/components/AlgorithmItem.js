@@ -1,11 +1,11 @@
 import React from 'react'
 
 const AlgorithmItem = ({algorithm, showProCon}) => {
-    const {name, imageUrl, pros, cons, averagePerformance, addedOn, description, moreDetailsUrl} = algorithm;
+    const {name, imageUrl, pros, cons, averagePerformance, addedOn, description, moreDetailsUrl, stable} = algorithm;
 
     return (
         <div className='algorithmItem'>
-            {name && <h2>{name}</h2>}        
+            <h2>{name}</h2>   
             {imageUrl && 
             <img
                 className='img'
@@ -13,12 +13,15 @@ const AlgorithmItem = ({algorithm, showProCon}) => {
                 alt={name}
             />}
 
-            <h3>Description</h3> 
-            {description && <p>{description}</p>}
+            <h3>Description:</h3> 
+            <p>{description}</p>
             
-            <h3>Big O Notation</h3>
-            {averagePerformance && <p>{averagePerformance}</p>}
+            <h3>Big O Notation:</h3>
+            <p>{averagePerformance}</p>
             
+            <h3>Added on: </h3><p>{addedOn}</p>
+            <h3>Stable: </h3><p>{stable ? 'Yes' : 'No' }</p>
+
             {showProCon && (
                 <div  style={{clear:'left'}}>
                     <h3>Pros</h3>
@@ -41,13 +44,9 @@ const AlgorithmItem = ({algorithm, showProCon}) => {
                 </div>    
             )}
 
-            {addedOn && <p style={{clear:'left'}}>Added: {addedOn}</p>}
-        
-            
             {moreDetailsUrl && (
-                <a href={moreDetailsUrl} target='_blank' rel="noopener noreferrer" > MORE DETAILS</a>
+                <a href={moreDetailsUrl} target='_blank' rel="noopener noreferrer" > <button className='dark-btn'>MORE DETAILS</button></a>
             )}
-            
         </div>
     )
 }
