@@ -9,7 +9,8 @@ const Sort = ({handleSortChange, selectedSort}) => {
     return (
         <div>
             <form>
-                <div className="form-check">
+                <label className="form-check sort">Sort: </label>
+                <div className="form-check sort">
                 <label>
                     <input
                     type="radio"
@@ -22,7 +23,7 @@ const Sort = ({handleSortChange, selectedSort}) => {
                 </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check sort" >
                 <label>
                     <input
                     type="radio"
@@ -35,7 +36,7 @@ const Sort = ({handleSortChange, selectedSort}) => {
                 </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check sort">
                 <label>
                     <input
                     type="radio"

@@ -4,7 +4,7 @@ import Data from '../data/data'
 
 const AlgorithmList = ({displayData, showProCon}) => {
     return (
-        <div>
+        <div className="algorithm-list">
             <h1>Displaying {displayData && displayData.length} of {Data && Data.length} Algorithms</h1>
             {displayData && displayData.length>0 && (
                 displayData.map((algorithm, idx) => (

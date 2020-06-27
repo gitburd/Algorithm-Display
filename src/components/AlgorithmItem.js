@@ -4,24 +4,23 @@ const AlgorithmItem = ({algorithm, showProCon}) => {
     const {name, imageUrl, pros, cons, averagePerformance, addedOn, description, moreDetailsUrl} = algorithm;
 
     return (
-        <div>
+        <div className='algorithmItem'>
             {name && <h2>{name}</h2>}        
             {imageUrl && 
-            <img 
+            <img
+                className='img'
                 src={imageUrl}
                 alt={name}
-                style={{
-                    width:'200px'
-                }}
             />}
 
+            <h3>Description</h3> 
             {description && <p>{description}</p>}
             
             <h3>Big O Notation</h3>
             {averagePerformance && <p>{averagePerformance}</p>}
             
             {showProCon && (
-                <div>
+                <div  style={{clear:'left'}}>
                     <h3>Pros</h3>
                     {pros && pros.length > 0 && (
                         <ul>
@@ -30,7 +29,7 @@ const AlgorithmItem = ({algorithm, showProCon}) => {
                             ))}
                         </ul>
                     )}
-
+            
                     <h3>Cons</h3>
                     {cons && cons.length > 0 && (
                         <ul>
@@ -42,7 +41,7 @@ const AlgorithmItem = ({algorithm, showProCon}) => {
                 </div>    
             )}
 
-            {addedOn && <p>Added: {addedOn}</p>}
+            {addedOn && <p style={{clear:'left'}}>Added: {addedOn}</p>}
         
             
             {moreDetailsUrl && (

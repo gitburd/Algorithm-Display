@@ -66,18 +66,21 @@ class App extends Component {
 
     return (
       <div>
-        <Sort 
-          selectedSort={this.state.selectedSort} 
-          handleSortChange={this.handleSortChange} 
-        />
-        <StableFilter 
-          handleCheckboxChange={this.handleCheckboxChange} 
-          isSelected={this.state.stableOnly}
-        />
-        <ToggleProCon
-          handleCheckboxChange={this.handleCheckboxChange} 
-          isSelected={this.state.showProCon}
-        /> 
+        <div className="header">
+          <Sort 
+            selectedSort={this.state.selectedSort} 
+            handleSortChange={this.handleSortChange} 
+          />
+          
+          <StableFilter 
+            handleCheckboxChange={this.handleCheckboxChange} 
+            isSelected={this.state.stableOnly}
+          />
+          <ToggleProCon
+            handleCheckboxChange={this.handleCheckboxChange} 
+            isSelected={this.state.showProCon}
+          /> 
+        </div>
         <AlgorithmList 
           displayData={displayData}
           showProCon={this.state.showProCon}

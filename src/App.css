@@ -1,7 +1,49 @@
-.center-all{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+  color: #393f4d;
+}
+
+.algorithm-list{
+  padding:10px 40px;
+}
+
+.algorithmItem{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  padding: 15px 40px 30px 40px;
+  width:75%;
+  margin: 25px auto;
+}
+
+.header{
+  width:100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #393f4d;
+  color:white;
+  padding-bottom: 10px;
+}
+
+.sort {
+  padding: 10px 0 10px 20px;
+  float:left;
+}
+
+.filter{
+  padding: 10px 0 10px 20px;
+  clear:both;
+}
+
+.img{
+  max-width:30%;  
+  height:200px;
+  object-fit: cover;
+  padding-bottom:20px;
+  padding-right: 30px;
+  float: left;
 }
